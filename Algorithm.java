@@ -1,10 +1,17 @@
 public abstract class Algorithm {
 
-    private int[] data;
+    protected int[] data;
 
     public Algorithm(int[] data) {
         this.data = data;
     }
 
     public abstract void sort();
+
+    public void print() {
+        for(int number : data) 
+            System.out.printf("%d, ", number);
+
+        System.out.println();
+    }
 }
