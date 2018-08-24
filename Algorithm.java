@@ -8,6 +8,12 @@ public abstract class Algorithm {
 
     public abstract void sort();
 
+    protected void swap(int a, int b) {
+        int temp = data[a];
+        data[a] = data[b]; 
+        data[b] = temp;
+    }
+
     public void print() {
         for(int number : data) 
             System.out.printf("%d, ", number);

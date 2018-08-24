@@ -1,29 +1,34 @@
 public class Shell extends Algorithm {
 
+    private int gap = 1;
+
     public Shell(int[] data) { super(data); }
 
     public void sort() {
         System.out.println("Shell sort");
 
-        //Selecting a gap
-        int gap = 1;
-        while(gap < data.length) 
-            gap = 3 * gap + 1;
-
+        selectGap();
+        
         while(gap >= 1) {
             for(int i = gap; i < data.length; i++) {
                 int j = i;
                 while(j >= gap && data[j - gap] > data[j]) {
-                    int temp = data[j - gap];
-                    data[j - gap] = data[j];
-                    data[j] = temp;                    
+                    swap(j - gap, j);                    
                     j -= gap;
                 }
             }
 
-            //Reduce gap
-            gap = (gap - 1) / 3;
+            reduceGap();
         }
+    }
+
+    private void selectGap() {
+        while(gap < data.length) 
+            gap = 3 * gap + 1;
+    }
+
+    private void reduceGap() {
+        gap = (gap - 1) / 3;
     }
     
 }

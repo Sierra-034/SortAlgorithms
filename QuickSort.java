@@ -1,14 +1,12 @@
 public class QuickSort extends Algorithm {
 
     private int pivot;
-    private int calls;
 
     public QuickSort(int[] data) { super(data); }
 
     public void sort() {
         System.out.println("QuickSort");
         quickSort(0, data.length - 1);
-        calls = 0;
     }
 
     private void quickSort(int left, int right) {
@@ -37,12 +35,6 @@ public class QuickSort extends Algorithm {
 
         swap(i, right);
         pivot = i;
-    }
-
-    private void swap(int a, int b) {
-        int temp = data[a];
-        data[a] = data[b];
-        data[b] = temp;
     }
     
 }

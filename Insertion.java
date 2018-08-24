@@ -10,9 +10,7 @@ public class Insertion extends Algorithm {
                 if(data[j - 1] < data[j])
                     break;
                 
-                int temp = data[j - 1];
-                data[j - 1] = data[j];
-                data[j] = temp;
+                swap(j - 1, j);
             }
     }
         
