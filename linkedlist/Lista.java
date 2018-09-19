@@ -1,18 +1,28 @@
 /*Declara una lista de nodos*/
-
 public class Lista {
 
-	private Nodo primero;
+	protected Nodo primero;
 
 	public Lista() {
 		primero = null;
 	}
 
-	public Lista(int number) {
-		primero = new Nodo(number);
+	public Lista insertarCabezaLista(int entrada) {
+		Nodo nuevo = new Nodo(entrada);
+		nuevo.setEnlace(primero);
+		primero = nuevo;
+		return this;
 	}
 
-	public void addElement(int number) {
-		primero = new Nodo(number, primero);
+	public void visualizar() {
+		Nodo nodo = primero;
+		int k = 0;
+
+		while(nodo != null) {
+			System.out.println(nodo.getDato() + " ");
+			nodo = nodo.getEnlace();
+			k++;
+			System.out.print((k % 15 != 0 ? " " : "\n"));
+		}
 	}
 }

@@ -1,9 +1,8 @@
-/*Declaración de un nodo*/
-
+/* La clase nodo con las dos partes de un nodo y su constructor */
 public class Nodo {
 
-	int dato;
-	Nodo enlace;
+	private int dato;
+	private Nodo enlace;
 
 	public Nodo(int entero) {
 		dato = entero;
